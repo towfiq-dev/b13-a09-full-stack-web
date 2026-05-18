@@ -2,8 +2,8 @@ import React from 'react';
 import { auth } from "@/lib/auth"; 
 import { headers } from "next/headers";
 import Link from 'next/link';
-import { IconTrash, IconEye, IconCalendar, IconClock, IconCurrencyTaka } from '@tabler/icons-react';
-import BookingDelete from '@/components/allNavPage/allAppointments/delete/BookingDelete'
+import { IconEye, IconCalendar, IconClock, IconCurrencyTaka } from '@tabler/icons-react';
+import BookingDelete from '@/components/allNavPage/dashboard/BookingDelete'
 
 const Dashboard = async () => {
   const session = await auth.api.getSession({
@@ -103,14 +103,14 @@ const Dashboard = async () => {
                     
                     {/*View Details*/}
                     <Link 
-                      href={`/allAppointments/${booking.detailsDataId || booking._id}`}
+                      href={`/allNav/allAppointments/${booking.detailsDataId || booking._id}`}
                       className='inline-flex items-center gap-2 bg-gray-50 dark:bg-neutral-800 hover:bg-blue-600 dark:hover:bg-blue-600 text-gray-700 dark:text-gray-300 hover:text-white dark:hover:text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition-all duration-200 border border-gray-200/60 dark:border-neutral-700/60 hover:border-blue-600 shadow-sm'
                     >
                       <IconEye size={16} />
                       <span>View</span>
                     </Link>
 
-                    <BookingDelete bookingsData={bookingsData}/>
+                    <BookingDelete booking={booking}/>
 
                   </div>
                 </div>

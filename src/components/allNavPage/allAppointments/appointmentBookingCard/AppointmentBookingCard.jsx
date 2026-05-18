@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
 
 const AppointmentBookingCard = ({ detailsData }) => {
-  const { _id, doctorName, image, specialty, fee, appointmentDate, appointmentTime } = detailsData;
+  const { _id, doctorName, specialty, fee, appointmentDate, appointmentTime } = detailsData;
   const { data: session } = authClient.useSession();
   const user = session?.user;
 
