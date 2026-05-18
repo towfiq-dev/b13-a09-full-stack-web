@@ -42,7 +42,6 @@ const AppointmentDetails = async ({ params }) => {
     <div className='mt-25 max-w-7xl mx-auto px-4 py-10 md:py-16'>
       
       <div className='grid grid-cols-1 md:grid-cols-3 gap-10'>
-        
         {/* Left Side (Content) */}
         <div className='md:col-span-2'>
           
@@ -162,9 +161,10 @@ const AppointmentDetails = async ({ params }) => {
         {/* Right Side (Sidebar Components) */}
         <div className='md:col-start-3'>
           <AppointmentBookingCard 
-            fee={fee} 
-            appointmentDate={appointmentDate} 
-            appointmentTime={appointmentTime} 
+            detailsData={detailsData}
+            //fee={fee} 
+            //appointmentDate={appointmentDate} 
+            //appointmentTime={appointmentTime} 
           />
           
           {/* Admin Controls Box */}
