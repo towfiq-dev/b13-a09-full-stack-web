@@ -1,6 +1,6 @@
 import React from 'react';
-import Delete from '@/components/allNavPage/delete/Delete';
-import AppointmentEditModal from '@/components/allNavPage/appointmentEditModal/AppointmentEditModal';
+import Delete from '@/components/allNavPage/allAppointments/delete/Delete';
+import AppointmentEditModal from '@/components/allNavPage/allAppointments/appointmentEditModal/AppointmentEditModal';
 const AppointmentDetails = async({params}) => {
   const {id} = await params
   const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/appointments/${id}`)

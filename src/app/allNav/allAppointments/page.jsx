@@ -1,4 +1,4 @@
-import AppointmentClient from '@/components/allNavPage/AppointmentClient/AppointmentClient';
+import AppointmentClient from '@/components/allNavPage/allAppointments/AppointmentClient/AppointmentClient';
 import { getAppointments } from '@/lib/data-fetch';
 import React from 'react';
 
