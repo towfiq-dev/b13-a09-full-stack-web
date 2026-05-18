@@ -15,7 +15,7 @@ import {
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
 
-export default function AppointmentEditModal({ detailsData }) {
+const AppointmentEditModal = ({ detailsData }) => {
   const router = useRouter()
   const onSubmit = async(e)=>{
   e.preventDefault()
@@ -46,7 +46,7 @@ export default function AppointmentEditModal({ detailsData }) {
         className="flex cursor-pointer items-center gap-2 rounded-xl border border-blue-500 bg-white px-5 py-2.5 font-medium text-blue-600 shadow-sm transition-all duration-300 hover:bg-blue-600 hover:text-white"
       >
         <Edit size={16} />
-        Edit Details
+        Reschedule
       </button>
 
       {/* Modal */}
@@ -271,3 +271,5 @@ export default function AppointmentEditModal({ detailsData }) {
     </>
   );
 }
+
+export default AppointmentEditModal;
