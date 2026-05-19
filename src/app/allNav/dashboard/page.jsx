@@ -8,6 +8,7 @@ import BookingDelete from '@/components/allNavPage/dashboard/BookingDelete'
 const Dashboard = async () => {
   const session = await auth.api.getSession({
     headers: await headers()
+
   });
   const user = session?.user;
 
@@ -22,8 +23,14 @@ const Dashboard = async () => {
   let bookingsData = [];
 
   try {
+    const {token} = await auth.api.getToken({
+        headers: await headers()
+      })
+      console.log(token);
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/bookings/${user.id}`, {
-      cache: 'no-store'
+      headers:{
+            authorization: `Bearer ${token}`
+          }
     });
 
     if (res.ok) {

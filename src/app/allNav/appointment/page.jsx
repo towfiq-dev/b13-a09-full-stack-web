@@ -2,6 +2,7 @@
 import React from 'react';
 import { Mail, User, Stethoscope, Phone, Calendar, Clock, ChevronDown } from 'lucide-react';
 import { toast } from 'react-toastify';
+import { authClient } from '@/lib/auth-client';
 
 export default function AppointmentForm() {
 
@@ -10,11 +11,18 @@ export default function AppointmentForm() {
   const form = e.currentTarget;
   const formData = new FormData(e.currentTarget)
   const newUser = Object.fromEntries(formData.entries())
+  
   try {
+    const {data: tokenData} = await authClient.token()
+    if (!tokenData?.token) {
+      toast.error('Authentication token missing. Please login again.');
+      return;
+    }
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/appointments`, {
       method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        authorization: `Bearer ${tokenData?.token}`
       },
       body: JSON.stringify(newUser)
     });
@@ -103,6 +111,27 @@ export default function AppointmentForm() {
                   required
                   className="w-full rounded-xl border border-gray-200 bg-gray-50/50 py-3 pl-11 pr-4 text-gray-700 outline-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
                 />
+              </div>
+            </div>
+            {/* fee */}
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="fee" className="text-sm font-semibold text-gray-700">
+                Fee
+              </label>
+              <div className="relative">
+                <select
+                  id="fee"
+                  name="fee"
+                  defaultValue=""
+                  required
+                  className="w-full appearance-none rounded-xl border border-gray-200 bg-gray-50/50 py-3 pl-4 pr-10 text-gray-700 outline-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
+                >
+                  <option value="" disabled>Select Current Fee</option>
+                  <option value="1000">1000</option>
+                  <option value="1400">1400</option>
+                  <option value="2200">2200</option>
+                </select>
+                <ChevronDown className="absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 pointer-events-none text-gray-500" />
               </div>
             </div>
 

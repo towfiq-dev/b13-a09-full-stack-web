@@ -1,4 +1,5 @@
 'use client'
+import { authClient } from '@/lib/auth-client';
 import { AlertDialog, Button } from '@heroui/react';
 import { Trash2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
@@ -8,10 +9,16 @@ import { toast } from 'react-toastify';
 const Delete = ({detailsData}) => {
   const router = useRouter()
   const handleDelete = async()=>{
+    const { data: tokenData } = await authClient.token();
+    if (!tokenData?.token) {
+      toast.error('Authentication token missing. Please login again.');
+      return;
+    }
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/appointments/${detailsData._id}`,{
       method: 'DELETE',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        authorization: `Bearer ${tokenData.token}`
       }
       
     })
