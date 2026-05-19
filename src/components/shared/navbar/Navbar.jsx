@@ -8,9 +8,10 @@ import Logo from '@/assets/images/docLogo.png'
 import NavLink from './NavLink';
 import { authClient } from '@/lib/auth-client';
 import { Menu, X, Eye, EyeOff } from 'lucide-react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 const Navbar = () => {
+  const router = useRouter()
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -31,6 +32,7 @@ const Navbar = () => {
 
   const handleSignOut = async () => {
     await authClient.signOut()
+    router.refresh()
   }
 
   const links = (
@@ -74,11 +76,6 @@ const Navbar = () => {
           {
             user ?
               <>
-                <Link href={'/allNav/profile'}>
-                  <Button variant='light'>
-                    Profile
-                  </Button>
-                </Link>
 
                 <Image
                   width={100}

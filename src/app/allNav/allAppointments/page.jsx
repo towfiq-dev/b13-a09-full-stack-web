@@ -3,6 +3,18 @@ import { getAppointments } from '@/lib/data-fetch';
 import React from 'react';
 import { IconStethoscope, IconCalendarCheck } from '@tabler/icons-react';
 
+export const metadata = {
+  title: "All Appointments — Browse Specialist Doctors | DocBook",
+  description: "Explore all available doctor appointments. Search by doctor name, specialty, hospital, and book your slot instantly.",
+  keywords: ["all appointments", "find doctor", "specialist doctors", "book appointment"],
+  openGraph: {
+    title: "All Appointments — Browse Specialist Doctors | DocBook",
+    description: "Find and book the right doctor for your health needs.",
+    url: "https://yourdomain.com/allNav/allAppointments",
+    type: "website",
+  },
+};
+
 const AllAppointment = async () => {
   const allAppointments = await getAppointments() || [];
 

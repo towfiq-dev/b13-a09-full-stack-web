@@ -9,6 +9,7 @@ import { FaPlay, FaArrowRight } from 'react-icons/fa';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
+import Link from 'next/link';
 
 const slides = [
   {
@@ -100,7 +101,6 @@ export default function HeroBanner() {
                   <p className="mt-6 text-gray-200 max-w-xl leading-relaxed text-lg drop-shadow">
                     {slide.desc}
                   </p>
-
                   {/* Buttons - Fully Clickable Now */}
                   <div className="mt-10 flex flex-wrap gap-5 relative z-30">
                     <button
@@ -109,13 +109,14 @@ export default function HeroBanner() {
                       <FaPlay className="text-xs" />
                       Live Demo
                     </button>
-
+                    <Link href={'/allNav/appointment'}>
                     <button
                       className="group cursor-pointer px-7 py-4 rounded-full border border-white/30 bg-white/10 backdrop-blur-md text-white font-semibold flex items-center gap-3 hover:bg-cyan-500 hover:border-cyan-500 duration-300 active:scale-95"
                     >
                       Get Started
                       <FaArrowRight className="group-hover:translate-x-1 duration-300" />
                     </button>
+                    </Link>
                   </div>
                 </motion.div>
 

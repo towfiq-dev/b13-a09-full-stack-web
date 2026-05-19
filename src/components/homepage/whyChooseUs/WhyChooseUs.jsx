@@ -76,7 +76,7 @@ const WhyChooseUs = ()=> {
             </div>
 
             <a
-              href="/auth/signup"
+              href={"/allNav/allAppointments"}
               className="inline-flex items-center gap-2 mt-10 px-8 py-3.5 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-cyan-600 transition-all duration-200 shadow-lg shadow-cyan-200 active:scale-95"
             >
               Get Started Free
