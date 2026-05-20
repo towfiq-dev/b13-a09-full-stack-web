@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import support from '@/assets/images/support.png'; 
+import Link from 'next/link';
 
 const Support = () => {
   return (
@@ -21,9 +22,11 @@ const Support = () => {
           <button className="px-7 py-3 rounded-full bg-[#00a8e8] text-white font-medium shadow-md hover:bg-[#0096d1] active:scale-95 transition-all duration-200 cursor-pointer text-sm">
             Documentation
           </button>
+          <Link href={'/allNav/contact'}>
           <button className="px-9 py-3 rounded-full bg-[#00a8e8] text-white font-medium shadow-md hover:bg-[#0096d1] active:scale-95 transition-all duration-200 cursor-pointer text-sm">
             Support
           </button>
+          </Link>
         </div>
       </div>
 
