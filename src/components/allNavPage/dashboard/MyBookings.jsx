@@ -1,11 +1,10 @@
 'use client'
 
 import React, { useState } from 'react';
-import { CalendarCheck, Stethoscope, Eye, Search } from 'lucide-react';
-import { IconCalendar, IconClock } from '@tabler/icons-react';
+import { CalendarCheck, Clock, Stethoscope, Eye, Search, Filter } from 'lucide-react';
+import { IconCurrencyTaka, IconCalendar, IconClock } from '@tabler/icons-react';
 import Link from 'next/link';
 import BookingDelete from './BookingDelete';
-import BookingUpdateModal from './BookingUpdateModal';
 
 const MyBookings = ({ bookings }) => {
   const [search, setSearch] = useState('');
@@ -54,10 +53,7 @@ const MyBookings = ({ bookings }) => {
             {search ? 'No matching bookings found' : 'No appointments yet'}
           </p>
           {search && (
-            <button
-              onClick={() => setSearch('')}
-              className="text-cyan-500 text-sm mt-2 hover:underline cursor-pointer"
-            >
+            <button onClick={() => setSearch('')} className="text-cyan-500 text-sm mt-2 hover:underline cursor-pointer">
               Clear search
             </button>
           )}
@@ -73,8 +69,8 @@ const MyBookings = ({ bookings }) => {
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 to-blue-600 rounded-l-2xl" />
 
               <div className="pl-5 pr-5 py-5 flex flex-col md:flex-row md:items-center gap-5">
-
-                {/* Doctor / Patient Info */}
+                
+                {/* Doctor Info */}
                 <div className="flex items-start gap-4 flex-1">
                   {booking.userImage ? (
                     <img
@@ -97,10 +93,7 @@ const MyBookings = ({ bookings }) => {
                     </h3>
                     <p className="text-gray-500 dark:text-slate-500 text-sm flex items-center gap-1.5 mt-0.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 flex-shrink-0" />
-                      Patient:{' '}
-                      <span className="font-medium text-gray-700 dark:text-slate-300">
-                        {booking.userName}
-                      </span>
+                      Patient: <span className="font-medium text-gray-700 dark:text-slate-300">{booking.userName}</span>
                     </p>
                   </div>
                 </div>
@@ -131,9 +124,7 @@ const MyBookings = ({ bookings }) => {
                     </div>
                   </div>
 
-                  {/* View | Update | Cancel */}
                   <div className="flex items-center gap-2">
-                    {/* View */}
                     <Link
                       href={`/allNav/allAppointments/${booking.detailsDataId || booking._id}`}
                       className="flex items-center gap-1.5 bg-gray-50 dark:bg-white/[0.04] hover:bg-cyan-600 dark:hover:bg-cyan-600 text-gray-700 dark:text-slate-300 hover:text-white text-xs font-semibold px-3 py-2 rounded-xl transition-all duration-200 border border-gray-200/60 dark:border-white/[0.06] hover:border-cyan-600"
@@ -141,11 +132,6 @@ const MyBookings = ({ bookings }) => {
                       <Eye size={14} />
                       View
                     </Link>
-
-                    {/* Update */}
-                    <BookingUpdateModal booking={booking} />
-
-                    {/* Cancel */}
                     <BookingDelete booking={booking} />
                   </div>
                 </div>
