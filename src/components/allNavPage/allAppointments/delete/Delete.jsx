@@ -32,8 +32,8 @@ const Delete = ({detailsData}) => {
   }
   return (
     <AlertDialog>
-      <Button variant="danger" className="flex cursor-pointer items-center gap-2 rounded-xl border border-red-400 px-6 py-6 font-medium text-black transition-all duration-300 hover:bg-red-500 hover:text-white">
-        <Trash2 size={18} />
+      <Button variant="danger" className="flex cursor-pointer items-center gap-1 rounded-xl border border-red-400 px-2 py-3 font-medium text-black transition-all duration-300 hover:bg-red-500 hover:text-white">
+        <Trash2 size={16} />
         Cancel
         </Button>
       <AlertDialog.Backdrop>

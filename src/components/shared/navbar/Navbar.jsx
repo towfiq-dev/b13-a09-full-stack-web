@@ -4,7 +4,7 @@ import { Avatar, Button } from '@heroui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
-import Logo from '@/assets/images/docLogo.png'
+import Logo from '@/assets/images/navLogo.png'
 import NavLink from './NavLink';
 import { authClient } from '@/lib/auth-client';
 import { Menu, X } from 'lucide-react';

@@ -60,7 +60,7 @@ const AppointmentEditModal = ({ detailsData }) => {
       {/* Open Modal Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="flex cursor-pointer items-center gap-2 rounded-xl border border-blue-500 bg-white px-5 py-2.5 font-medium text-blue-600 shadow-sm transition-all duration-300 hover:bg-blue-600 hover:text-white"
+        className="flex cursor-pointer items-center gap-2 rounded-xl border border-blue-500 bg-white px-2 py-2 font-medium text-blue-600 shadow-sm transition-all duration-300 hover:bg-blue-600 hover:text-white"
       >
         <Edit size={16} />
         Reschedule
