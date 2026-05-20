@@ -1,6 +1,7 @@
 import Banner from '@/components/homepage/banner/Banner';
 import HomeFetaured from '@/components/homepage/homeFeatured/HomeFetaured';
 import HowItWorks from '@/components/homepage/howItWorks/HowItWorks';
+import Support from '@/components/homepage/suppport/Support';
 import WhyChooseUs from '@/components/homepage/whyChooseUs/WhyChooseUs';
 import React from 'react';
 
@@ -20,6 +21,7 @@ const Home = () => {
     <div className='mt-20'>
       <Banner/>
       <HomeFetaured/>
+      <Support/>
       <WhyChooseUs/>
       <HowItWorks/>
     </div>

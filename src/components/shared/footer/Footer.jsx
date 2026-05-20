@@ -3,7 +3,7 @@ import { FaXTwitter, FaYoutube, FaFacebook, FaBuilding } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="relative w-full bg-slate-900 text-slate-300 overflow-hidden py-1">
+    <footer className="relative w-full bg-slate-900 text-slate-300 overflow-hidden py-1 mt-30">
       
       <div className="absolute top-[-20%] left-[-10%] w-[400px] h-[400px] rounded-full bg-gradient-to-br from-blue-600/30 to-purple-600/10 blur-[80px] pointer-events-none" />
       <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-cyan-500/20 to-emerald-500/10 blur-[100px] pointer-events-none" />
