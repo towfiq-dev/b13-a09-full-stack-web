@@ -47,6 +47,7 @@ const AppointmentEditModal = ({ detailsData }) => {
 
     if (data) {
       toast.success('Appointment Update Successfully');
+      router.refresh()
       router.push('/allNav/allAppointments');
     } else {
       toast.error('Something went wrong');

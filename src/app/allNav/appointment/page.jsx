@@ -3,9 +3,10 @@ import React from 'react';
 import { Mail, User, Stethoscope, Phone, Calendar, Clock, ChevronDown } from 'lucide-react';
 import { toast } from 'react-toastify';
 import { authClient } from '@/lib/auth-client';
+import { useRouter } from 'next/navigation';
 
 export default function AppointmentForm() {
-
+  const router = useRouter()
   const onSubmit = async(e)=>{
   e.preventDefault()
   const form = e.currentTarget;
@@ -32,7 +33,7 @@ export default function AppointmentForm() {
     if (data) {
       toast.success('Appointment booked successfully!');
       form.reset(); 
-      
+      router.refresh()
     } else {
       toast.error('Something went wrong');
     }

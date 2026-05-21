@@ -25,6 +25,7 @@ const Delete = ({detailsData}) => {
     const data = await res.json()
     if (data) {
       toast.success('Delete SuccessFully')
+      router.refresh()
       router.push('/allNav/allAppointments')
     }else{
       toast.error('Something went wrong')

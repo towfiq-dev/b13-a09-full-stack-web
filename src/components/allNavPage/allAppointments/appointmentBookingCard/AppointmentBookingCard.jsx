@@ -61,6 +61,7 @@ const AppointmentBookingCard = ({ detailsData }) => {
 
       if (res.ok) {
         toast.success('Your Booking is Successful!');
+        router.refresh()
         router.push('/allNav/dashboard');
       } else {
         toast.error('Something went wrong on the server');
