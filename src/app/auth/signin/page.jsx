@@ -45,7 +45,7 @@ const SignInPage = () => {
   };
 
   return (
-    <div className="min-h-screen mt-25 bg-gradient-to-br from-slate-100 via-gray-100 to-slate-200 flex justify-center items-center px-4 py-10">
+    <div className="min-h-screen mt-25 flex justify-center items-center px-4 py-10">
       <div className="w-full max-w-[620px]">
         {/* Card */}
         <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">

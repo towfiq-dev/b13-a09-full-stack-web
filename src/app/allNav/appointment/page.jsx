@@ -4,9 +4,14 @@ import { Mail, User, Stethoscope, Phone, Calendar, Clock, ChevronDown } from 'lu
 import { toast } from 'react-toastify';
 import { authClient } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
+import { useSession } from '@/lib/auth-client';
 
 export default function AppointmentForm() {
   const router = useRouter()
+  const { data: session } = useSession()
+
+  const userName = session?.user?.name || ''
+  const userEmail = session?.user?.email || ''
   const onSubmit = async(e)=>{
   e.preventDefault()
   const form = e.currentTarget;
@@ -72,6 +77,8 @@ export default function AppointmentForm() {
                   type="email"
                   id="userEmail"
                   name="userEmail"
+                  value={userEmail}
+                  readOnly
                   placeholder="user@gmail.com"
                   required
                   className="w-full rounded-xl border border-gray-200 bg-gray-50/50 py-3 pl-11 pr-4 text-gray-700 outline-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"
@@ -108,6 +115,8 @@ export default function AppointmentForm() {
                   type="text"
                   id="patientName"
                   name="patientName"
+                  value={userName}
+                  readOnly
                   placeholder="Rahim Uddin"
                   required
                   className="w-full rounded-xl border border-gray-200 bg-gray-50/50 py-3 pl-11 pr-4 text-gray-700 outline-none transition focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100"

@@ -116,6 +116,7 @@ const AppointmentEditModal = ({ detailsData }) => {
                       <input
                         type="email"
                         name="userEmail"
+                        readOnly
                         defaultValue={detailsData?.userEmail || ''}
                         placeholder="user@gmail.com"
                         required
@@ -166,6 +167,7 @@ const AppointmentEditModal = ({ detailsData }) => {
                         name="patientName"
                         defaultValue={detailsData?.patientName || ''}
                         placeholder="Patient Name"
+                        readOnly
                         required
                         className="w-full rounded-xl border border-gray-200 bg-gray-50 py-3 pl-10 pr-4 text-sm text-gray-700 outline-none transition-all focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-100"
                       />

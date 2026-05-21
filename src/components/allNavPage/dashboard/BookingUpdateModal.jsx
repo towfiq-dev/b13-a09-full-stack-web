@@ -18,7 +18,7 @@ import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
 import { authClient } from '@/lib/auth-client';
 
-/* ── ছোট helper: একটা ইনপুট ফিল্ড ── */
+/* helper:*/
 const Field = ({ label, icon: Icon, name, type = 'text', defaultValue, placeholder, disabled, required }) => (
   <div>
     <label className="mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-gray-500">
