@@ -13,7 +13,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-slate-50 min-h-screen text-slate-800 font-sans">
+    <div className="min-h-screen text-slate-800 font-sans">
       
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white py-16 px-4 text-center">
@@ -32,7 +32,7 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
         
         {/* Left Side: Contact Information Card */}
-        <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100 flex flex-col justify-between">
+        <div className="rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100 flex flex-col justify-between">
           <div>
             <h2 className="text-xl font-bold text-slate-900 mb-2">Contact Information</h2>
             <p className="text-slate-500 text-sm mb-6">
@@ -93,7 +93,7 @@ const Contact = () => {
         </div>
 
         {/* Right Side: Contact Form Card (Spans 2 columns on large screens) */}
-        <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100 lg:col-span-2">
+        <div className="rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100 lg:col-span-2">
           <h2 className="text-xl font-bold text-slate-900 mb-1">Send Us a Message</h2>
           <p className="text-slate-500 text-sm mb-6">
             We values your feedback. Please fill up this form carefully.

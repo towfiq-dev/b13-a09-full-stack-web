@@ -43,9 +43,9 @@ export default function AppointmentForm() {
   }
 };
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100 p-4 mt-20">
+    <div className="flex min-h-screen items-center justify-center p-4 mt-20">
       {/* Form Container */}
-      <div className="w-full max-w-2xl overflow-hidden rounded-2xl bg-white shadow-lg">
+      <div className="w-full max-w-2xl overflow-hidden rounded-2xl border-2 border-gray-300 shadow-lg">
         
         {/* Header Section */}
         <div className="bg-gradient-to-r from-sky-400 to-blue-500 py-6 text-center text-white">

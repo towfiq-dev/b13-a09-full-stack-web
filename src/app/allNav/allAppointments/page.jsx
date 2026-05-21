@@ -40,7 +40,7 @@ const AllAppointment = async () => {
         </div>
 
         {/* Live Status Counter Box */}
-        <div className="flex items-center gap-4 bg-gradient-to-br from-blue-50/60 via-white to-blue-50/20 dark:from-neutral-900 dark:to-neutral-950/40 border-2 border-blue-100/60 dark:border-blue-950/40 p-4 rounded-2xl shadow-lg shadow-slate-100/50 dark:shadow-black/20 shrink-0">
+        <div className="flex items-center gap-4  border-2 border-blue-100/60 dark:border-blue-950/40 p-4 rounded-2xl shadow-lg shadow-slate-100/50 dark:shadow-black/20 shrink-0">
           <div className="p-3 bg-blue-500 text-white rounded-xl shadow-md shadow-blue-500/20">
             <IconCalendarCheck size={24} stroke={2} />
           </div>

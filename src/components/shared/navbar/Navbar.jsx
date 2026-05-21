@@ -10,6 +10,7 @@ import { authClient } from '@/lib/auth-client';
 import { Menu, X } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
+import ThemeToggle from '@/components/themeToggle/ThemeToggle';
 
 const Navbar = () => {
   const router = useRouter()
@@ -69,8 +70,11 @@ const Navbar = () => {
         }`}
         style={{ borderBottom: isScrolled ? '1.5px solid rgba(0,180,216,0.10)' : '1.5px solid transparent' }}
       >
+        
         <div className='max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center'>
-
+          <div>
+          
+        </div>
           {/* Logo */}
           <Link href="/" className="shrink-0 group">
             <Image
@@ -87,7 +91,7 @@ const Navbar = () => {
           <ul className='hidden lg:flex items-center gap-1 xl:gap-2'>
             {links}
           </ul>
-
+          <ThemeToggle />
           {/* Desktop Right Side */}
           <div className='hidden lg:flex items-center gap-3'>
             {user ? (

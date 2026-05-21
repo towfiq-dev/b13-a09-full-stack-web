@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import React from 'react';
-import support from '@/assets/images/support.png'; 
+import support from '@/assets/images/contact.png'; 
 import Link from 'next/link';
 
 const Support = () => {
   return (
-    <div className="w-full bg-white px-6 py-12 md:px-16 lg:px-24 flex flex-col md:flex-row items-center justify-between gap-8 max-w-7xl mx-auto">
+    <div className="w-full px-6 py-12 md:px-16 lg:px-24 flex flex-col md:flex-row items-center justify-between gap-8 max-w-7xl mx-auto">
       
       <div className="flex-1 max-w-xl text-center md:text-left">
         <h3 className="text-[#00c5fb] font-semibold text-sm tracking-wide uppercase mb-2">
