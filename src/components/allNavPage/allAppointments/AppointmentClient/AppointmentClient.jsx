@@ -59,7 +59,7 @@ const AppointmentClient = ({ allAppointments }) => {
           <p className="text-sm text-gray-400 mt-1">Try a different name or clear the search.</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 overflow-x-hidden">
           {filteredAppointments.map((appointment) => (
             <div key={appointment._id}>
               <AppointmentsCard appointment={appointment} />

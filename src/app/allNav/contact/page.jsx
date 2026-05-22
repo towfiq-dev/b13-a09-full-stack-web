@@ -92,7 +92,7 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Right Side: Contact Form Card (Spans 2 columns on large screens) */}
+        {/* Right Side: Contact Form Card */}
         <div className="rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100 lg:col-span-2">
           <h2 className="text-xl font-bold text-slate-900 mb-1">Send Us a Message</h2>
           <p className="text-slate-500 text-sm mb-6">

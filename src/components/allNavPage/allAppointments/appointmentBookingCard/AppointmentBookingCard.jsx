@@ -13,7 +13,17 @@ import {
 } from '@tabler/icons-react';
 
 const AppointmentBookingCard = ({ detailsData }) => {
-  const { _id, doctorName, specialty, fee, appointmentDate, appointmentTime } = detailsData;
+  const { 
+    _id, 
+    doctorName, 
+    specialty, 
+    fee, 
+    appointmentDate, 
+    appointmentTime,
+    phoneNumber,
+    gender
+  } = detailsData;
+
   const { data: session } = authClient.useSession();
   const user = session?.user;
 
@@ -33,22 +43,30 @@ const AppointmentBookingCard = ({ detailsData }) => {
     try {
       const parsedDate = date.toDate ? date.toDate("UTC") : new Date(date);
 
+      // appointmentDate
+      const formattedDate = parsedDate.toISOString().split('T')[0];
+
       const bookingData = {
         userId: user.id,
         userImage: user.image || "",
         userName: user.name,
+        userEmail: user.email || "",
         detailsDataId: _id,
         doctorName,
         fee,
         specialty,
+        appointmentDate: formattedDate,
+        appointmentTime: appointmentTime || "",
+        phoneNumber: phoneNumber || "",
+        gender: gender || "",
         date: parsedDate
       };
       
-      const {data: tokenData} = await authClient.token()
-    if (!tokenData?.token) {
-      toast.error('Authentication token missing. Please login again.');
-      return;
-    }
+      const { data: tokenData } = await authClient.token();
+      if (!tokenData?.token) {
+        toast.error('Authentication token missing. Please login again.');
+        return;
+      }
       
       const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/bookings`, {
         method: "POST",
@@ -61,7 +79,7 @@ const AppointmentBookingCard = ({ detailsData }) => {
 
       if (res.ok) {
         toast.success('Your Booking is Successful!');
-        router.refresh()
+        router.refresh();
         router.push('/allNav/dashboard');
       } else {
         toast.error('Something went wrong on the server');
@@ -119,7 +137,6 @@ const AppointmentBookingCard = ({ detailsData }) => {
       {/* Reschedule Input and Button */}
       <div className="space-y-5 relative z-10">
         
-        {/* HeroUI DateField Wrapper Custom Styling */}
         <div className="w-full bg-white/90 dark:bg-neutral-800/60 border border-gray-100 dark:border-neutral-800/40 p-4 rounded-2xl shadow-sm">
           <DateField 
             className="w-full" 
